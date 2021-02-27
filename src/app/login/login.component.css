@@ -1,0 +1,24 @@
+.mat-card {
+  min-width: auto ! important;
+  width: 300px;
+  margin: 30px auto;
+  box-shadow: 7px 8px 7px -3px #ddd ! important;
+}
+
+.mat-card-header {
+  justify-content: center;
+  letter-spacing: 1px;
+}
+
+.mat-form-field-infix,
+table.example-full-width,
+.mat-form-field {
+  width: 100%;
+  float: left;
+}
+
+mat-card-actions {
+  display: flex !important;
+  justify-content: center;
+  margin-bottom: 0 !important;
+}

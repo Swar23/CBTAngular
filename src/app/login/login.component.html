@@ -1,1 +1,38 @@
-<p>login works!</p>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form" (ngSubmit)="f.form.valid && onSubmit()" name="myForm" #f="ngForm" novalidate>
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email" [(ngModel)]="email" #emails="ngModel" name="email" required
+                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+              <mat-error [hidden]="emails.valid">
+                Valid email format is xyz@abc.com
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Password" [(ngModel)]="password" name="password" #passwords="ngModel"
+                type="password" required minlength="6">
+              <mat-error [hidden]="passwords.valid">
+                Password should be more then 6 characters
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+      <mat-card-actions>
+        <button mat-raised-button type="submit" color="primary">Login</button>
+      </mat-card-actions>
+    </form>
+
+  </mat-card-content>
+
+</mat-card>
