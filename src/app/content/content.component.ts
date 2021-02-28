@@ -15,6 +15,19 @@ export class ContentComponent implements OnInit {
 
   student$: Observable<Student[]>;
 
+  columnDefs = [
+    { field: 'Id', sortable: true, filter: true },
+    { field: 'Name', sortable: true, filter: true },
+    { field: 'Subject', sortable: true, filter: true },
+    { field: 'Marks', sortable: true, filter: true }
+  ];
+
+  rowData = [
+    { Id: 'Toyota', Name: 'Celica', Subject: 'Maths', Marks: 35000 },
+    { Id: 'Ford', Name: 'Swarup', Subject: 'Science', Marks: 35000 },
+    { Id: 'Toyota2', Name: 'Celica2', Subject: 'Maths2', Marks: 35000 },
+  ];
+
   ngOnInit(): void {
     this.getStudentData();
   }
