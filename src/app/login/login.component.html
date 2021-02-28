@@ -7,6 +7,8 @@
       <table class="example-full-width" cellspacing="0">
         <tr>
           <td>
+            <mat-label [hidden]='isError'>Email or Password is wrong</mat-label>
+
             <mat-form-field class="example-full-width">
               <input matInput placeholder="Email" [(ngModel)]="email" #emails="ngModel" name="email" required
                 pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
@@ -27,10 +29,12 @@
             </mat-form-field>
           </td>
         </tr>
+
       </table>
       <mat-card-actions>
         <button mat-raised-button type="submit" color="primary">Login</button>
       </mat-card-actions>
+
     </form>
 
   </mat-card-content>

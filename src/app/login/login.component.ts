@@ -12,7 +12,8 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
   data;
-  public error: string;
+  public isError: boolean = true;
+
 
   constructor(private router: Router, private dataService: GetDataService) { }
 
@@ -24,8 +25,10 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     this.dataService.authenticateLogin(this.email, this.password).subscribe((v) => {
-
+      this.isError = true;
       this.router.navigate(['content']);
+    }, (err) => {
+      this.isError = false;
     });
 
 
