@@ -33,11 +33,14 @@ export class ContentComponent implements OnInit {
   }
 
   getStudentData() {
-    this.student$ = this.service.getStudentData().pipe(map(res => this.getData(res)));
+    // this.student$ =
+    // this.service.getStudentData().pipe(map(res => console.log(res)));
+    this.service.getStudentData().subscribe((data) => { console.log(data) });
   }
 
   // if we have more fields we can select specific field and also operate on it
   getData(res): Student[] {
+    console.log(res.data);
     const student: Student[] = [];
     res.data.users.forEach(element => {
       const stud = {} as Student;

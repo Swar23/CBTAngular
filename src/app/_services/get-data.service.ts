@@ -23,6 +23,7 @@ export class GetDataService {
   }
 
   getStudentData() {
-    return this.http.get("/api/student");
+    let a = this.http.get('/api/student', {});
+    return a;
   }
 }
