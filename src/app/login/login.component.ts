@@ -17,12 +17,18 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private dataService: GetDataService) { }
 
   ngOnInit(): void {
+    //change once logout functionality is added
+    localStorage.removeItem('access_token');
+
   }
 
   onSubmit(): void {
-    const isAuthenticate = this.dataService.authenticateLogin(this.email, this.password).subscribe();
-    if (isAuthenticate) {
+    this.dataService.authenticateLogin(this.email, this.password).subscribe((v) => {
+
       this.router.navigate(['content']);
-    }
+    });
+
+
+
   }
 }
